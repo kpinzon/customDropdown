@@ -1,4 +1,4 @@
-export interface IDropdownOptionModel {
+export interface ISelectOptionModel {
   id: number;
   label: string;
 }

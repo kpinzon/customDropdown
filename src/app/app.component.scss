@@ -1,0 +1,14 @@
+.debug {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    margin-right: 10px;
+  }
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="select-container" #select>
+  <div (click)="showDropdown()" class="select-text-container">
+    <span [ngClass]="{'placeholder-text' : showPlaceholder}">{{displayText}}</span>
+    <img *ngIf="!showing; else upChevron" class="chevron" src="assets/chevron-down.svg"  alt="chevron down" />
+  </div>
+
+  <ng-template #upChevron>
+    <img class="chevron" src="assets/chevron-up.svg"  alt="chevron up" />
+  </ng-template>
+
+  <ng-template cdk-portal class="dropdown">
+    <div class="dropdown-menu">
+      <div class="dropdown-options-container">
+        <ng-container *ngFor="let option of dropdownOptions">
+          <shared-select-option [option]="option"
+                                (select)="selectOption(option)"></shared-select-option>
+        </ng-container>
+      </div>
+    </div>
+  </ng-template>
+</div>
